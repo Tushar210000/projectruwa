@@ -67,4 +67,6 @@ router.patch(
   ambulanceCtrl.updateBookingStatus
 );
 
+router.delete("/admin/delete/:_id",auth,authorizeRole('ADMIN'),ambulanceCtrl.deleteBookingByAdmin)
+
 module.exports = router;

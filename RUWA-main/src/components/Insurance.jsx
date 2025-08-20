@@ -269,7 +269,7 @@ export default function Insurance() {
       fd.append("medical_documents", formData.medicalDoc);
       fd.append("income_certificate", formData.incomeCert);
 
-      const res = await fetch("http://localhost:8000/api/services/apply-insurance/user/apply", {
+      const res = await fetch("https://last-2-ltig.onrender.com/api/services/apply-insurance/user/apply", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`

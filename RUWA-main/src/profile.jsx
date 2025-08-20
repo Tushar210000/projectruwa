@@ -3,7 +3,7 @@
 export const fetchProfile = async () => {
   const token = localStorage.getItem("token");
 
-  const response = await fetch("http://localhost:8000/api/auth/profile", {
+  const response = await fetch("https://last-2-ltig.onrender.com/api/auth/profile", {
     headers: {
       Authorization: `Bearer ${token}`,
     },

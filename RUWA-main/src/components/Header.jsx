@@ -720,7 +720,7 @@
 //     }
 
 //     try {
-//       const response = await axios.post('http://localhost:8000/api/auth/register', {
+//       const response = await axios.post('https://last-2-ltig.onrender.com/api/auth/register', {
 //         name: registerData.name,
 //         phone: registerData.phone,
 //         password: registerData.password,
@@ -1314,7 +1314,7 @@ export default function Header() {
   //     }
   //     try {
   //       const response = await axios.post(
-  //         "http://localhost:8000/api/auth/login",
+  //         "https://last-2-ltig.onrender.com/api/auth/login",
   //         {
   //           employeeId,
   //           password,
@@ -1349,7 +1349,7 @@ export default function Header() {
         : { employeeId, password };
 
     const response = await axios.post(
-      "http://localhost:8000/api/auth/login",
+      "https://last-2-ltig.onrender.com/api/auth/login",
       payload
     );
 
@@ -1416,7 +1416,7 @@ export default function Header() {
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/auth/register",
+        "https://last-2-ltig.onrender.com/api/auth/register",
         {
           name: registerData.name,
           phone: registerData.phone,

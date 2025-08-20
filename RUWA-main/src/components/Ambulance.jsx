@@ -245,7 +245,7 @@ export default function Ambulance() {
     try {
       const token = localStorage.getItem("token"); // JWT token
       await axios.post(
-        "http://localhost:8000/api/services/ambulance-booking/user/book",
+        "https://last-2-ltig.onrender.com/api/services/ambulance-booking/user/book",
         formData,
         {
           headers: {

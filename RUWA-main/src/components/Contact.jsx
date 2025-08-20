@@ -60,7 +60,7 @@ export default function Contact() {
     try {
       const fullPhone = `${formData.countryCode}${formData.phone}`;
 
-      const res = await fetch(`http://localhost:8000/api/contact/submit`, {
+      const res = await fetch(`https://last-2-ltig.onrender.com/api/contact/submit`, {
         method: 'POST',
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

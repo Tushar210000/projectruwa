@@ -370,7 +370,7 @@ export default function Janarogycard() {
       try {
         const token = localStorage.getItem("token");
         const res = await fetch(
-          "http://localhost:8000/api/services/janarogya/check",
+          "https://last-2-ltig.onrender.com/api/services/janarogya/check",
           {
             method: "GET",
             headers: {
@@ -411,7 +411,7 @@ export default function Janarogycard() {
   // Prefill user info
   useEffect(() => {
     const token = localStorage.getItem("token");
-    fetch("http://localhost:8000/api/auth/profile", {
+    fetch("https://last-2-ltig.onrender.com/api/auth/profile", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())
@@ -517,7 +517,7 @@ export default function Janarogycard() {
       try {
         const token = localStorage.getItem("token");
         const res = await fetch(
-          "http://localhost:8000/api/services/janarogya/user/apply",
+          "https://last-2-ltig.onrender.com/api/services/janarogya/user/apply",
           {
             method: "POST",
             headers: { Authorization: `Bearer ${token}` },

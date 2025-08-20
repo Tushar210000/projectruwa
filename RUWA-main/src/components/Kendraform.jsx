@@ -69,7 +69,7 @@ const Kendraform = () => {
       if (formData.qualificationCert) formDataToSend.append("qualificationCertificate", formData.qualificationCert);
       if (formData.financialStatement) formDataToSend.append("financialStatement", formData.financialStatement);
 
-      const res = await fetch("http://localhost:8000/api/services/apply-kendra/apply", {
+      const res = await fetch("https://last-2-ltig.onrender.com/api/services/apply-kendra/apply", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`

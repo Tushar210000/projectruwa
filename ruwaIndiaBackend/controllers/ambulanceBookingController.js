@@ -1,3 +1,4 @@
+const { Compressor } = require("mongodb");
 const AmbulanceBooking = require("../model/ambulanceBooking");
 
 // Common booking logic
@@ -111,5 +112,21 @@ exports.withdrawBooking = async (req, res) => {
     res.json({ message: "Booking withdrawn", booking });
   } catch (err) {
     res.status(500).json({ message: "Error withdrawing booking", error: err.message });
+  }
+};
+// ADMIN: Delete a booking
+exports.deleteBookingByAdmin = async (req, res) => {
+  const { _id } = req.params;
+   console.log(_id)
+  try {
+    const booking = await AmbulanceBooking.findByIdAndDelete(_id);
+
+    if (!booking) {
+      return res.status(404).json({ message: "Booking not found" });
+    }
+
+    res.json({ message: "Booking deleted successfully by Admin", booking });
+  } catch (err) {
+    res.status(500).json({ message: "Error deleting booking", error: err.message });
   }
 };

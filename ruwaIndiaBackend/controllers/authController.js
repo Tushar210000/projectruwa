@@ -37,16 +37,48 @@ exports.register = async (req, res) => {
  }
 // LOGIN via password
 exports.login = async (req, res) => {
-  const { phone, password } = req.body;
-  const user = await User.findOne({ phone });
-  if (!user) return res.status(404).json({ message: "User not found" });
+  try {
+    const { phone, employeeId, password } = req.body;
 
-  const ok = await bcrypt.compare(password, user.password);
-  if (!ok) return res.status(401).json({ message: "Incorrect password" });
+    if (!password || (!phone && !employeeId)) {
+      return res.status(400).json({ message: "Missing login credentials" });
+    }
 
-  const token = generateToken(user);
-  console.log(user.role)
-  res.json({ message: "Logged in", token,role:user.role });
+    // Find user by phone or employeeId
+    let user;
+    if (phone) {
+      user = await User.findOne({ phone });
+    } else if (employeeId) {
+      user = await User.findOne({ employeeId });
+    }
+
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    // Check if employee is approved
+    if (user.role === "EMPLOYEE" && !user.verified) {
+      return res.status(403).json({ message: "Employee not approved yet" });
+    }
+
+    // Verify password
+    const isPasswordValid = await bcrypt.compare(password, user.password);
+    if (!isPasswordValid) {
+      return res.status(401).json({ message: "Incorrect password" });
+    }
+
+    const token = generateToken(user);
+
+    res.json({
+      message: "Logged in successfully",
+      token,
+      role: user.role,
+      status:user.status
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server error", error: error.message });
+  }
 };
 
 // RESET password (with phone verification logic assumed)

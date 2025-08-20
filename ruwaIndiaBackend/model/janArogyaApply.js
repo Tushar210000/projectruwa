@@ -20,7 +20,8 @@ const janArogyaApplySchema = new mongoose.Schema({
   // Status for admin
   status: { type: String, enum: ["pending", "approved", "rejected"], default: "pending" },
 
-  createdBy: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true }
+  appliedBy: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
+    forUser: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
 }, { timestamps: true });
 
 module.exports = mongoose.model("JanArogyaApply", janArogyaApplySchema);

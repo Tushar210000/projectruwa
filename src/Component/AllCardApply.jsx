@@ -9,7 +9,7 @@ const AllCardApply = () => {
  const token=localStorage.getItem('token')
  const fetchLeads = async () => {
   try {
-    const response = await fetch("https://last-2-ltig.onrender.com/api/services/janarogya/admin/all", {
+    const response = await fetch("https://ruwa-back-2.onrender.com/api/services/janarogya/admin/all", {
       method: "GET",
         headers: { Authorization: `Bearer ${token}` },
     });

@@ -1193,7 +1193,7 @@ const LoginPage = ({ onLogin }) => {
     setLoading(true);
 
     try {
-      const res = await fetch("https://last-2-ltig.onrender.com/api/auth/login", {
+      const res = await fetch("https://ruwa-back-2.onrender.com/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ phone, password }),

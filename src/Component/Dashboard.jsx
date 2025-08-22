@@ -995,35 +995,35 @@ const Dashboard = () => {
     const fetchDashboardData = async () => {
       try {
         // Summary
-        const summaryRes = await axios.get('https://last-2-ltig.onrender.com/api/admin/summary',{
+        const summaryRes = await axios.get('https://ruwa-back-2.onrender.com/api/admin/summary',{
           method: "GET",
         headers: { Authorization: `Bearer ${token}` },
         });
         setSummary(summaryRes.data);
 
         // Today Leads
-        const leadsRes = await axios.get('https://last-2-ltig.onrender.com/api/admin/leads/today',{
+        const leadsRes = await axios.get('https://ruwa-back-2.onrender.com/api/admin/leads/today',{
           method: "GET",
         headers: { Authorization: `Bearer ${token}` },
         });
         setTodayLeads(leadsRes.data || []);
 
         // Today Arogya Applications
-        const arogyaRes = await axios.get('https://last-2-ltig.onrender.com/api/admin/arogya/today',{
+        const arogyaRes = await axios.get('https://ruwa-back-2.onrender.com/api/admin/arogya/today',{
           method: "GET",
         headers: { Authorization: `Bearer ${token}` },
         });
         setTodayArogya(arogyaRes.data || []);
 
         // Today Contact Messages
-        const messagesRes = await axios.get('https://last-2-ltig.onrender.com/api/admin/messages/today',{
+        const messagesRes = await axios.get('https://ruwa-back-2.onrender.com/api/admin/messages/today',{
           method: "GET",
         headers: { Authorization: `Bearer ${token}` },
         });
         setTodayMessages(messagesRes.data || []);
 
         // Hourly Leads
-        const hourlyRes = await axios.get('https://last-2-ltig.onrender.com/api/admin/leads/todays-leads-hourly',{
+        const hourlyRes = await axios.get('https://ruwa-back-2.onrender.com/api/admin/leads/todays-leads-hourly',{
           method: "GET",
         headers: { Authorization: `Bearer ${token}` },
         });

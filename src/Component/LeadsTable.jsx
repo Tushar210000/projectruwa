@@ -734,7 +734,7 @@ const LeadsTable = () => {
   // ✅ Fetch leads from backend
   const fetchLeads = async () => {
     try {
-      const response = await fetch('https://last-2-ltig.onrender.com/api/contact/getAll', {
+      const response = await fetch('https://ruwa-back-2.onrender.com/api/contact/getAll', {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -768,7 +768,7 @@ const LeadsTable = () => {
     if (!window.confirm('Are you sure you want to delete this lead?')) return;
 
     try {
-      const res = await fetch(`https://last-2-ltig.onrender.com/api/contact/delete/${_id}`, {
+      const res = await fetch(`https://ruwa-back-2.onrender.com/api/contact/delete/${_id}`, {
         method: "DELETE",
         
         headers: { Authorization: `Bearer ${token}` },

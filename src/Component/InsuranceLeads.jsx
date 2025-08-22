@@ -9,7 +9,7 @@ const InsuranceApplications = () => {
   const fetchApplications = async () => {
     try {
       const token = localStorage.getItem("token"); // 🔑 Adjust if you store differently
-      const res = await fetch("https://last-2-ltig.onrender.com/api/services/apply-insurance/admin/all", {
+      const res = await fetch("https://ruwa-back-2.onrender.com/api/services/apply-insurance/admin/all", {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },
         // credentials: "include",
@@ -37,7 +37,7 @@ const InsuranceApplications = () => {
   const updateStatus = async (id, status) => {
     try {
       const token = localStorage.getItem("token");
-      await fetch(`https://last-2-ltig.onrender.com/api/services/apply-insurance/admin/status/${id}`, {
+      await fetch(`https://ruwa-back-2.onrender.com/api/services/apply-insurance/admin/status/${id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

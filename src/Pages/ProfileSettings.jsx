@@ -380,7 +380,7 @@ export default function Profile() {
 
   useEffect(() => {
     if (!token) return;
-    axios.get("https://last-2-ltig.onrender.com/api/admin/profile", {
+    axios.get("https://ruwa-back-2.onrender.com/api/admin/profile", {
   headers: { Authorization: `Bearer ${token}` },
 })
       .then((res) => {
@@ -409,7 +409,7 @@ export default function Profile() {
     if (file) form.append("profile_pic", file);
 
     try {
-      const res = await axios.put("https://last-2-ltig.onrender.com/api/admin/update-profile", form, {
+      const res = await axios.put("https://ruwa-back-2.onrender.com/api/admin/update-profile", form, {
         headers: { Authorization: `Bearer ${token}`, "Content-Type": "multipart/form-data" },
       });
       setUser(res.data.user);
@@ -428,8 +428,8 @@ export default function Profile() {
       <h2>My Profile </h2>
       <div className="text-center mb-3">
         <img
-          src={file ? URL.createObjectURL(file) : user.profile_pic ? `https://last-2-ltig.onrender.comy
-            ${user.profile_pic}` : "https://last-2-ltig.onrender.com/uploads/default.png"}
+          src={file ? URL.createObjectURL(file) : user.profile_pic ? `https://ruwa-back-2.onrender.com
+            ${user.profile_pic}` : "https://ruwa-back-2.onrender.com/uploads/default.png"}
           alt="Profile"
           width="120"
           style={{ borderRadius: "50%" }}

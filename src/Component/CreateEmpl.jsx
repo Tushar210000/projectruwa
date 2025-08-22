@@ -54,7 +54,7 @@
 //   const handleSubmit = async (e) => {
 //     e.preventDefault();
 //     try {
-//       await axios.post("https://last-2-ltig.onrender.com/api/employees/create", formData);
+//       await axios.post("https://ruwa-back-2.onrender.com/api/employees/create", formData);
 //       alert("✅ Employee Created Successfully!");
 //       setFormData({ name: "", employeeId: "", email: "", phone: "", password: "" });
 //     } catch (err) {
@@ -206,7 +206,7 @@ export default function CreateEmployee() {
     
 
     await axios.post(
-      "https://last-2-ltig.onrender.com/api/employee/create",
+      "https://ruwa-back-2.onrender.com/api/employee/create",
       formData,
       {
         headers: {

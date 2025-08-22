@@ -9,7 +9,7 @@ const AmbulanceLeads = () => {
   const token=localStorage.getItem("token")
  const fetchLeads = async () => {
   try {
-    const response = await fetch('https://last-2-ltig.onrender.com/api/services/ambulance-booking/admin/all', {
+    const response = await fetch('https://ruwa-back-2.onrender.com/api/services/ambulance-booking/admin/all', {
        method: "GET",
         headers: { Authorization: `Bearer ${token}` },
     });
@@ -44,7 +44,7 @@ const handleDelete = async (_id) => {
   if (window.confirm('Are you sure you want to delete this booking?')) {
     try {
       const res = await fetch(
-        `https://last-2-ltig.onrender.com/api/services/ambulance-booking/admin/delete/${_id}`,
+        `https://ruwa-back-2.onrender.com/api/services/ambulance-booking/admin/delete/${_id}`,
         {
           method: 'DELETE',
         headers: { Authorization: `Bearer ${token}` },

@@ -8,7 +8,7 @@ const PopupLeads = () => {
    const token=localStorage.getItem('token')
   const fetchLeads = async () => {
     try {
-      const response = await fetch('https://last-2-ltig.onrender.com/api/popup/admin/popup/getAll', {
+      const response = await fetch('https://ruwa-back-2.onrender.com/api/popup/admin/popup/getAll', {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` }
       });
@@ -40,7 +40,7 @@ const PopupLeads = () => {
  const handleDelete = async (_id) => {
   if (window.confirm('Are you sure you want to delete this lead?')) {
     try {
-      const res = await fetch(`https://last-2-ltig.onrender.com/api/popup/admin/delete/${_id}`, {
+      const res = await fetch(`https://ruwa-back-2.onrender.com/api/popup/admin/delete/${_id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` }
 
